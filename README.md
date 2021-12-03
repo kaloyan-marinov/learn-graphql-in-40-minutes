@@ -34,14 +34,50 @@
     to call that query, we just have to write the following in the left-hand panel of the loaded web interface (which is a text editor):
     ```
     query {
-      message
+      books {
+        authorId
+        name
+      }
     }
     ```
     and the right-hand panel will be populated with
     ```
     {
-    "data": {
-        "message": "Hello world!"
-    }
+      "data": {
+        "books": [
+          {
+            "authorId": 1,
+            "name": "Harry Potter and the Chamber of Secrets"
+          },
+          {
+            "authorId": 1,
+            "name": "Harry Potter and the Prisoner of Azkaban"
+          },
+          {
+            "authorId": 1,
+            "name": "Harry Potter and the Goblet of Fire"
+          },
+          {
+            "authorId": 2,
+            "name": "The Fellowship of the Ring"
+          },
+          {
+            "authorId": 2,
+            "name": "The Two Towers"
+          },
+          {
+            "authorId": 2,
+            "name": "The Return of the King"
+          },
+          {
+            "authorId": 3,
+            "name": "The Way of Shadows"
+          },
+          {
+            "authorId": 3,
+            "name": "Beyond the Shadows"
+          }
+        ]
+      }
     }
     ```
