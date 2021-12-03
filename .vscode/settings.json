@@ -1,0 +1,20 @@
+{
+  "editor.rulers": [
+    88, 100
+  ],
+
+  // Controls if suggestions should be accepted 'Enter' - in addition to 'Tab'.
+  // Helps to avoid ambiguity between inserting new lines or accepting suggestions.
+  "editor.acceptSuggestionOnEnter": "off",
+
+  "editor.acceptSuggestionOnCommitCharacter": false,
+
+  "[javascript]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "editor.formatOnSave": true,
+    
+    "editor.tabSize": 2
+  },
+
+  "restructuredtext.confPath": ""
+}
