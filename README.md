@@ -35,7 +35,9 @@
     ```
     query {
       books {
-        authorId
+        author {
+          name
+        }
         name
       }
     }
@@ -46,35 +48,51 @@
       "data": {
         "books": [
           {
-            "authorId": 1,
+            "author": {
+              "name": "J. K. Rowling"
+            },
             "name": "Harry Potter and the Chamber of Secrets"
           },
           {
-            "authorId": 1,
+            "author": {
+              "name": "J. K. Rowling"
+            },
             "name": "Harry Potter and the Prisoner of Azkaban"
           },
           {
-            "authorId": 1,
+            "author": {
+              "name": "J. K. Rowling"
+            },
             "name": "Harry Potter and the Goblet of Fire"
           },
           {
-            "authorId": 2,
+            "author": {
+              "name": "J. R. R. Tolkien"
+            },
             "name": "The Fellowship of the Ring"
           },
           {
-            "authorId": 2,
+            "author": {
+              "name": "J. R. R. Tolkien"
+            },
             "name": "The Two Towers"
           },
           {
-            "authorId": 2,
+            "author": {
+              "name": "J. R. R. Tolkien"
+            },
             "name": "The Return of the King"
           },
           {
-            "authorId": 3,
+            "author": {
+              "name": "Brent Weeks"
+            },
             "name": "The Way of Shadows"
           },
           {
-            "authorId": 3,
+            "author": {
+              "name": "Brent Weeks"
+            },
             "name": "Beyond the Shadows"
           }
         ]
