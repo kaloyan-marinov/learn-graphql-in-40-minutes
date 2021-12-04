@@ -61,6 +61,66 @@
     another query that we can call is:
     ```
     query {
+      authors {
+        name
+        books {
+          name
+        }
+      }
+    }
+    ```
+    and its result will be
+    ```
+    {
+      "data": {
+        "authors": [
+          {
+            "name": "J. K. Rowling",
+            "books": [
+              {
+                "name": "Harry Potter and the Chamber of Secrets"
+              },
+              {
+                "name": "Harry Potter and the Prisoner of Azkaban"
+              },
+              {
+                "name": "Harry Potter and the Goblet of Fire"
+              }
+            ]
+          },
+          {
+            "name": "J. R. R. Tolkien",
+            "books": [
+              {
+                "name": "The Fellowship of the Ring"
+              },
+              {
+                "name": "The Two Towers"
+              },
+              {
+                "name": "The Return of the King"
+              }
+            ]
+          },
+          {
+            "name": "Brent Weeks",
+            "books": [
+              {
+                "name": "The Way of Shadows"
+              },
+              {
+                "name": "Beyond the Shadows"
+              }
+            ]
+          }
+        ]
+      }
+    }
+    ```
+
+    yet another query that we can call is:
+    ```
+    query {
       books {
         author {
           name
