@@ -100,6 +100,23 @@ const RootMutationType = new GraphQLObjectType({
   name: "RootMutation",
   description: "this represents the so-called 'root mutation'",
   fields: () => ({
+    addAuthor: {
+      type: AuthorType,
+      description: "add an author",
+      args: {
+        name: { type: new GraphQLNonNull(GraphQLString) },
+      },
+      resolve: (parent, args) => {
+        // TOOD: check if the next comment is true
+        // In this case, the `parent` is of `RootMutationType`.
+        const author = {
+          id: authors.length + 1,
+          name: args.name,
+        };
+        authors.push(author);
+        return author;
+      },
+    },
     addBook: {
       type: BookType,
       description: "add a book",
@@ -108,8 +125,6 @@ const RootMutationType = new GraphQLObjectType({
         authorId: { type: new GraphQLNonNull(GraphQLInt) },
       },
       resolve: (parent, args) => {
-        // TOOD: check if the next comment is true
-        // In this case, the `parent` is of `RootMutationType`.
         const book = {
           id: books.length + 1,
           name: args.name,

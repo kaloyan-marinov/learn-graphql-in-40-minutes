@@ -211,7 +211,7 @@
     to call a mutation, we just have to write the following in the left-hand panel of the loaded web interface (which is a text editor):
     ```
     mutation {
-      addBook(name: "New name", authorId: 1) {
+      addAuthor(name: "New author") {
         name
         id
       }
@@ -221,9 +221,9 @@
     ```
     {
       "data": {
-        "addBook": {
-          "name": "New name",
-          "id": 9
+        "addAuthor": {
+          "name": "New author",
+          "id": 4
         }
       }
     }
