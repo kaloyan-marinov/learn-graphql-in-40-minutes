@@ -18,6 +18,10 @@ const app = express();
 // Define/Create a GraphQL schema.
 
 // - the "query" section is "the getting of data"
+/*
+    Q: Why is the value under the `fields` key a function (instead of just an object)?
+    A: B/c each of `AuthorType` and `BookType` references the other one!
+*/
 const AuthorType = new GraphQLObjectType({
   name: "Author",
   description: "this represents an author",
@@ -90,8 +94,37 @@ const RootQueryType = new GraphQLObjectType({
   }),
 });
 
+// - the "mutation" section is
+//   "GraphQL's version of using POST, PUT, and DELETE on a REST API server"
+const RootMutationType = new GraphQLObjectType({
+  name: "RootMutation",
+  description: "this represents the so-called 'root mutation'",
+  fields: () => ({
+    addBook: {
+      type: BookType,
+      description: "add a book",
+      args: {
+        name: { type: new GraphQLNonNull(GraphQLString) },
+        authorId: { type: new GraphQLNonNull(GraphQLInt) },
+      },
+      resolve: (parent, args) => {
+        // TOOD: check if the next comment is true
+        // In this case, the `parent` is of `RootMutationType`.
+        const book = {
+          id: books.length + 1,
+          name: args.name,
+          authorId: args.authorId,
+        };
+        books.push(book);
+        return book;
+      },
+    },
+  }),
+});
+
 const schema = new GraphQLSchema({
   query: RootQueryType,
+  mutation: RootMutationType,
 });
 
 // Add GraphQL to the backend application.

@@ -207,3 +207,24 @@
       }
     }
     ```
+
+    to call a mutation, we just have to write the following in the left-hand panel of the loaded web interface (which is a text editor):
+    ```
+    mutation {
+      addBook(name: "New name", authorId: 1) {
+        name
+        id
+      }
+    }
+    ```
+    and the right-hand panel will be populated with
+    ```
+    {
+      "data": {
+        "addBook": {
+          "name": "New name",
+          "id": 9
+        }
+      }
+    }
+    ```
