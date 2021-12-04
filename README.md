@@ -61,6 +61,27 @@
     another query that we can call is:
     ```
     query {
+      book(id: 1) {
+        name
+      }
+    }
+    ```
+    and its result will be
+    ```
+    {
+      "data": {
+        "book": {
+          "name": "Harry Potter and the Chamber of Secrets"
+        }
+      }
+    }
+    ```
+
+    ---
+
+    yet another query that we can call is:
+    ```
+    query {
       authors {
         name
         books {
