@@ -31,7 +31,34 @@
 
     instead, launch a browser and navigate to `localhost:5000/graphql` - a GraphQL web interface should load in your browser tab (you can check the documentation of our GraphQL server by clicking on `Docs`)
 
-    to call that query, we just have to write the following in the left-hand panel of the loaded web interface (which is a text editor):
+    to call a query, we just have to write the following in the left-hand panel of the loaded web interface (which is a text editor):
+    ```
+    query {
+      authors {
+        name
+      }
+    }
+    ```
+    and the right-hand panel will be populated with
+    ```
+    {
+      "data": {
+        "authors": [
+          {
+            "name": "J. K. Rowling"
+          },
+          {
+            "name": "J. R. R. Tolkien"
+          },
+          {
+            "name": "Brent Weeks"
+          }
+        ]
+      }
+    }
+    ```
+
+    another query that we can call is:
     ```
     query {
       books {
@@ -42,7 +69,7 @@
       }
     }
     ```
-    and the right-hand panel will be populated with
+    and its result will be
     ```
     {
       "data": {
