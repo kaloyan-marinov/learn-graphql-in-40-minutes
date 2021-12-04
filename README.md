@@ -61,7 +61,7 @@
     another query that we can call is:
     ```
     query {
-      book(id: 1) {
+      author(id: 1) {
         name
       }
     }
@@ -70,8 +70,8 @@
     ```
     {
       "data": {
-        "book": {
-          "name": "Harry Potter and the Chamber of Secrets"
+        "author": {
+          "name": "J. K. Rowling"
         }
       }
     }
